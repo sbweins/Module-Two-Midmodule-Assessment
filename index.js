@@ -1,3 +1,5 @@
+// Make code less dry!
+
 document.addEventListener("DOMContentLoaded", () => {
   const diceArr = ["&#9856", "&#9857", "&#9858", "&#9859", "&#9860", "&#9861"];
   const form = document.querySelector("form");
@@ -13,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < input.value; i++) {
       arr[i] = diceArr[Math.floor(Math.random() * 6)];
     }
-    console.log(diceArr);
 
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sum += 6;
       }
     }
-
+    
     const diceLi = document.createElement("li");
     diceLi.innerHTML = `${arr.join("")} = ${sum}`;
     diceUL.appendChild(diceLi);
@@ -40,3 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
     dicePara.innerHTML = arr.join("");
   });
 });
+
